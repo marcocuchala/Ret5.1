@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascrip" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascrip" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        
+        <title>AUTENTICACION</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascrip">
+            $.get("autenticacionuser/user", function (data) {
+                $("#user").html(data.name);
+                $(".unauthenticated").hide();
+                $(".autenticated").show();
+                
+            });
+            
+            
+        </script>
+                 
+    </head>
+    <body>
+        <div>Bienvenido</div>
+        <div class="container unauthenticated">
+            Autentiquese con GitHub: <a href="/oauth2/authorization/github">click her</a>
+        </div>
+        
+        <div class="container autehenticated" style="display:none">
+            Logged in as: <span id="user"></span>
+        </div>
+    </body>
+</html>
